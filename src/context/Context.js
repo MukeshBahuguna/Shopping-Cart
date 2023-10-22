@@ -1,4 +1,4 @@
-import React, {createContext ,useContext,useReducer} from 'react'
+import React, {createContext ,useContext,useReducer , useEffect} from 'react'
 import { faker } from '@faker-js/faker';
 import {cartReducer} from './Reducer.js';
 
@@ -27,6 +27,12 @@ const Context = ({children}) => {
         cart:[],
     });
 
+    useEffect(() => {
+        console.log("state is in useEffect : "  ,state);
+    
+    }, [state])
+      
+    
 
   return (
     <Cart.Provider value={{state , dispatch}}>

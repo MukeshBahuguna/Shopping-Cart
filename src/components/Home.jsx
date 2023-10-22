@@ -5,7 +5,7 @@ import Filters from './Filters';
 
 const Home = () => {
 
-  const {state } = CartState();
+  const {state : {products} ,dispatch } = CartState();
   
   return (
     <div className="home">
@@ -13,7 +13,7 @@ const Home = () => {
 
       <div className="productContainer">
         {
-          state.products.map((prod)=>{
+          products.map((prod)=>{
             return <SingleProduct prod={prod} key={prod.id}/>
           })
         }

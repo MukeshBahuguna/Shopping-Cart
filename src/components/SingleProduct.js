@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import Rating from './Rating';
 import { CartState } from '../context/Context';
 
 const SingleProduct = ({prod}) => {
-  const {
-    state: { cart },
-    dispatch,
-  } = CartState();
+  const {state: { cart },dispatch} = CartState();
 
   return (
     <div className="products">
